@@ -4,8 +4,8 @@
 
 zero-release analyzes Conventional Commits, calculates the next SemVer version,
 generates release notes, creates annotated Git tags, and runs explicit publish
-or notification plugins. It is written in Bash for projects that want automated
-releases in CI without installing a runtime dependency tree.
+or notification plugins. Its core is Bash, not JavaScript, for projects that
+want automated releases in CI without installing a runtime dependency tree.
 
 [![zero-release tests](https://github.com/zero-release/zero-release/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/zero-release/zero-release/actions/workflows/tests.yml)
 [![Documentation](https://img.shields.io/badge/docs-zero--release.github.io-blue)](https://zero-release.github.io/)
@@ -16,6 +16,8 @@ releases in CI without installing a runtime dependency tree.
 
 - **Small release toolchain:** the core CLI runs with Bash, Git, and standard
   Unix tools.
+- **Zero JavaScript in the core:** no Node.js runtime, npm install,
+  `node_modules`, or bundled JavaScript dependency chain.
 - **GitHub Actions friendly:** use it as a composite action with stable workflow
   inputs and outputs.
 - **Conventional Commit releases:** `feat:`, `fix:`, `perf:`, and breaking
@@ -88,4 +90,3 @@ Network behavior is opt-in and network plugins are skipped in dry-run mode.
 - [Plugins](https://zero-release.github.io/plugins/)
 - [CLI reference](https://zero-release.github.io/reference/cli/)
 - [Security model](https://zero-release.github.io/reference/security/)
-
